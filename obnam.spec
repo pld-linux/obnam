@@ -6,7 +6,7 @@
 Summary:	An easy, secure backup program
 Name:		obnam
 Version:	1.6.1
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Networking/Utilities
 Source0:	http://ftp.debian.org/debian/pool/main/o/obnam/%{name}_%{version}.orig.tar.gz
@@ -99,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/obnam*
 %{_mandir}/man1/obnam*.1*
 %{py_sitedir}/obnam-%{version}-py*.egg-info
+%dir %{py_sitedir}/obnamlib
 %{py_sitedir}/obnamlib/*.py[co]
 %attr(755,root,root) %{py_sitedir}/obnamlib/_obnam.so
 %dir %{py_sitedir}/obnamlib/plugins
