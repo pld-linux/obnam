@@ -6,7 +6,7 @@
 Summary:	An easy, secure backup program
 Name:		obnam
 Version:	1.9
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Networking/Utilities
 Source0:	http://code.liw.fi/debian/pool/main/o/obnam/%{name}_%{version}.orig.tar.gz
@@ -20,12 +20,14 @@ BuildRequires:	attr-devel
 #BuildRequires:	summain
 # build- and run-time dependencies
 BuildRequires:	attr
+BuildRequires:	python-PyYAML
 BuildRequires:	python-cliapp
 BuildRequires:	python-larch
 #BuildRequires:	python-paramiko
 BuildRequires:	python-tracing
 #BuildRequires:	python-ttystatus
 Requires:	attr
+Requires:	python-PyYAML
 Requires:	python-cliapp
 Requires:	python-larch
 Requires:	python-paramiko
