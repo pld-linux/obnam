@@ -5,18 +5,18 @@
 
 Summary:	An easy, secure backup program
 Name:		obnam
-Version:	1.6.1
-Release:	2
+Version:	1.9
+Release:	1
 License:	GPL v3+
 Group:		Networking/Utilities
-Source0:	http://ftp.debian.org/debian/pool/main/o/obnam/%{name}_%{version}.orig.tar.gz
-# Source0-md5:	fa6aaf0ad228662a6b73a19c5fae83f5
-URL:		http://liw.fi/obnam/
+Source0:	http://code.liw.fi/debian/pool/main/o/obnam/%{name}_%{version}.orig.tar.gz
+# Source0-md5:	6d01cde8eca96ddee4174e599d7ed349
+URL:		http://obnam.org/
 # build-time
 BuildRequires:	attr-devel
 #BuildRequires:	cmdtest
 #BuildRequires:	genbackupdata
-#BuildRequires:	python-coverage-test-runner
+BuildRequires:	python-coverage-test-runner
 #BuildRequires:	python-devel
 #BuildRequires:	summain
 # build- and run-time dependencies
@@ -71,7 +71,7 @@ done
 # run tests before build. it alters build dir
 # (use different build dirs?)
 %if %{with tests}
-./check
+./check --unit-tests
 %endif
 
 CC="%{__cc}" \
@@ -102,6 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{py_sitedir}/obnamlib
 %{py_sitedir}/obnamlib/*.py[co]
 %attr(755,root,root) %{py_sitedir}/obnamlib/_obnam.so
+%{py_sitedir}/obnamlib/fmt_*
 %dir %{py_sitedir}/obnamlib/plugins
 %{py_sitedir}/obnamlib/plugins/__init__.py[co]
 %{py_sitedir}/obnamlib/plugins/*_plugin.py[co]
