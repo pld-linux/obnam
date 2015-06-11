@@ -16,7 +16,6 @@ URL:		http://obnam.org/
 BuildRequires:	attr-devel
 #BuildRequires:	cmdtest
 #BuildRequires:	genbackupdata
-BuildRequires:	python-coverage-test-runner
 #BuildRequires:	python-devel
 #BuildRequires:	summain
 # build- and run-time dependencies
@@ -32,6 +31,7 @@ Requires:	python-larch
 Requires:	python-paramiko
 Requires:	python-tracing
 Requires:	python-ttystatus
+%{?with_tests:BuildRequires:	python-coverage-test-runner}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
