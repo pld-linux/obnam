@@ -5,12 +5,12 @@
 
 Summary:	An easy, secure backup program
 Name:		obnam
-Version:	1.9
-Release:	2
+Version:	1.17
+Release:	1
 License:	GPL v3+
 Group:		Networking/Utilities
-Source0:	http://code.liw.fi/debian/pool/main/o/obnam/%{name}_%{version}.orig.tar.gz
-# Source0-md5:	6d01cde8eca96ddee4174e599d7ed349
+Source0:	http://code.liw.fi/debian/pool/main/o/obnam/%{name}_%{version}.orig.tar.xz
+# Source0-md5:	205c4ef9155cd6651dad1cfe6625d0b5
 URL:		http://obnam.org/
 # build-time
 BuildRequires:	attr-devel
