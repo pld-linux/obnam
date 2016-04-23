@@ -6,7 +6,7 @@
 Summary:	An easy, secure backup program
 Name:		obnam
 Version:	1.17
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Networking/Utilities
 Source0:	http://code.liw.fi/debian/pool/main/o/obnam/%{name}_%{version}.orig.tar.xz
@@ -23,7 +23,7 @@ BuildRequires:	attr
 BuildRequires:	python-PyYAML
 BuildRequires:	python-cliapp
 BuildRequires:	python-larch
-#BuildRequires:	python-paramiko
+BuildRequires:	python-paramiko
 BuildRequires:	python-tracing
 #BuildRequires:	python-ttystatus
 Requires:	attr
@@ -76,16 +76,11 @@ done
 ./check --unit-tests
 %endif
 
-CC="%{__cc}" \
-CFLAGS="%{rpmcflags}" \
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__python} setup.py install \
-	--skip-build \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
 # internal tests
 %{__rm} $RPM_BUILD_ROOT%{py_sitedir}/obnamlib/*_tests.py*
